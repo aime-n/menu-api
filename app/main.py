@@ -1,8 +1,8 @@
-from api.routers.chat import router as chat_router
-from api.routers.recipe_router import router as recipe_router
-from api.routers.ingredient import router as ingredient_router
+from app.api.chat import router as chat_router
+from app.api.recipe import router as recipe_router
+from app.api.ingredient import router as ingredient_router
 from fastapi import FastAPI
-from api.core.config import settings
+from app.core.config import settings
 
 app = FastAPI(title=settings.PROJECT_NAME, 
               version=settings.PROJECT_VERSION)

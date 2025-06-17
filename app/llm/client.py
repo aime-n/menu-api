@@ -1,6 +1,6 @@
 from typing import Optional
 from langchain_openai import ChatOpenAI
-from api.core.config import settings
+from app.core.config import settings
 
 
 class ChatOpenRouter(ChatOpenAI):
