@@ -84,3 +84,6 @@ venv/
 docs/preconvert
 site/
 out
+
+# environment variables
+.env
