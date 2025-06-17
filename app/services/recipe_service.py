@@ -1,6 +1,6 @@
 from typing import List, Optional, Tuple
 from sqlmodel import Session, select
-from app.schemas.recipe import Recipe, Ingredient, RecipeIngredientLink
+from app.db.models import Recipe, Ingredient, RecipeIngredientLink
 
 
 def get_or_create_ingredient(session: Session, name: str) -> Ingredient:

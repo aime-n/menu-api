@@ -1,10 +1,10 @@
 from langgraph.graph import StateGraph, START
-from api.my_agent.utils.state import State
-from api.my_agent.utils.nodes import chatbot
+from app.agents.utils.state import State
+from app.agents.utils.nodes import chatbot
 from langchain_core.runnables import RunnableConfig
 
 
-from api.utils.visualize_graph import visualize_graph
+from app.utils.visualize_graph import visualize_graph
 
 # from functools import lru_cache
 # TODO @lru_cache()?

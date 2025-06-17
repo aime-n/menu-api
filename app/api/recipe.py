@@ -4,7 +4,8 @@ from sqlmodel import Session
 
 from app.db.session import get_session
 from app.services import recipe_service
-from app.schemas.recipe import RecipeCreate, RecipePublic, Recipe
+from app.schemas.recipe import RecipeCreate, RecipePublic
+from app.db.models import Recipe
 
 router = APIRouter()
 

@@ -1,6 +1,7 @@
 from fastapi import HTTPException
 from sqlmodel import Session, select
-from app.schemas.recipe import Ingredient, IngredientDetail
+from app.schemas.recipe import IngredientDetail
+from app.db.models import Ingredient
 from typing import List
 
 

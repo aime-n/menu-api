@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlmodel import Session, select
 from typing import List
 
-from app.schemas.recipe import Ingredient, IngredientDetail
+from app.schemas.recipe import IngredientDetail
 from app.db.session import get_session  # Certifique-se de ter essa função
 from app.services.ingredient_service import (
     create_ingredient_service,

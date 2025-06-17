@@ -3,7 +3,7 @@ from app.core.config import settings
 from supabase import create_client, Client
 
 # Import your schemas so that SQLModel knows about them
-from app.schemas import recipe_schema 
+from app.schemas import recipe 
 
 # The SQLModel.metadata object contains all the table definitions.
 # We will import this into Alembic's environment script.

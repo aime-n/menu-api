@@ -1,6 +1,6 @@
-from api.services.llm_factory import get_llm
-from api.my_agent.utils.state import State
-from api.core.config import settings
+from app.core.llm_factory import get_llm
+from app.agents.utils.state import State
+from app.core.config import settings
 
 
 llm = get_llm(settings.DEFAULT_MODEL)
