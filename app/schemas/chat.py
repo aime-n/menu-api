@@ -1,7 +1,7 @@
 # src/api/schemas/chat.py
 from pydantic import BaseModel, Field
 from typing import List, Optional, Literal, Any
-from api.schemas.llm import ModelName, ModelProvider
+from app.schemas.llm import ModelName, ModelProvider
 from datetime import datetime
 from langchain_core.messages import BaseMessage, AIMessage, HumanMessage
 
