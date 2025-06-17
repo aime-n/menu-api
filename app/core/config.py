@@ -12,13 +12,6 @@ class DatabaseSettings(BaseSettings):
     SUPABASE_HOST: str = Field(default_factory=lambda: SecretStr(""))
     DATABASE_URL: str = Field(default_factory=lambda: SecretStr(""))
 
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        case_sensitive=True,
-        extra='ignore'
-    )
-
 
 # Settings específicas para LLM
 class LLMSettings(BaseSettings):
@@ -28,13 +21,6 @@ class LLMSettings(BaseSettings):
     BASE_URL_OPENROUTER: str = "https://openrouter.ai/api/v1"
     TIMEOUT: int = 600
     DEFAULT_MODEL: ModelName = ModelName.DEEPSEEK_V3_MODEL
-
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        case_sensitive=True,
-        extra='ignore'
-    )
 
 
 # Settings gerais que herdam das específicas
