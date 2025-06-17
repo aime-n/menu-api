@@ -2,9 +2,9 @@
 from fastapi import APIRouter, HTTPException, Request
 import json
 from sse_starlette.sse import EventSourceResponse
-from api.schemas.chat import ChatRequest, ChatResponse
+from app.schemas.chat import ChatRequest, ChatResponse
 # from..services import llm_factory
-from api.my_agent.agent import get_graph
+from app.agents.agent import get_graph
 
 
 router = APIRouter()

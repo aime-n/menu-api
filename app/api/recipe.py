@@ -2,9 +2,9 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session
 
-from ..core.supabase_client import get_session
-from ..services import recipe_service
-from ..schemas.recipe_schema import RecipeCreate, RecipePublic, Recipe
+from app.db.session import get_session
+from app.services import recipe_service
+from app.schemas.recipe import RecipeCreate, RecipePublic, Recipe
 
 router = APIRouter()
 

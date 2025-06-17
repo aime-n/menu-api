@@ -2,9 +2,9 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlmodel import Session, select
 from typing import List
 
-from api.schemas.recipe_schema import Ingredient, IngredientDetail
-from api.core.supabase_client import get_session  # Certifique-se de ter essa função
-from api.services.ingredient_service import (
+from app.schemas.recipe import Ingredient, IngredientDetail
+from app.db.session import get_session  # Certifique-se de ter essa função
+from app.services.ingredient_service import (
     create_ingredient_service,
     get_ingredient_service,
     list_ingredients_service,
