@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from sqlmodel import SQLModel
+from sqlmodel import SQLModel, Field
 
 
 class IngredientRecipe(SQLModel):
@@ -15,6 +15,7 @@ class RecipeCreate(SQLModel):
 
 class IngredientDetail(SQLModel):
     name: str
+    id: Optional[int] = None
 
 class RecipePublic(SQLModel):
     id: int

@@ -90,5 +90,7 @@ def handle_delete_recipe_by_id(recipe_id: int, session: Session = Depends(get_se
         if not deleted:
             raise HTTPException(status_code=404, detail="Recipe not found")
         return {"ok": True, "message": f"Recipe with id '{recipe_id}' deleted."}
+    except HTTPException:
+        raise  # captura erro HTTPException já levantado
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))

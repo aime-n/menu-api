@@ -1,0 +1,2 @@
+2025-06-17T20:43:06.002160-0300 INFO {'detail': "1 validation error for ChatResponse\noutput.type\n  Field required [type=missing, input_value={'content': 'Hello!', 'role': 'assistant'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"}
+2025-06-17T20:43:29.723196-0300 INFO {'detail': "1 validation error for ChatResponse\noutput.type\n  Field required [type=missing, input_value={'content': 'Hello!', 'role': 'assistant'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.11/v/missing"}

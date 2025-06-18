@@ -1,10 +1,10 @@
-# src/api/routers/chat.py
 from fastapi import APIRouter, HTTPException, Request
 import json
 from sse_starlette.sse import EventSourceResponse
 from app.schemas.chat import ChatRequest, ChatResponse
 # from..services import llm_factory
 from app.agents.agent import get_graph
+from langchain_core.messages import HumanMessage
 
 
 router = APIRouter()
@@ -18,8 +18,8 @@ async def chat_endpoint(request: ChatRequest):
     try:
         graph = get_graph()
         config = {"configurable": {"thread_id": request.thread_id}}
-        input_messages = [msg.model_dump() for msg in request.messages]  # TODO Prepare messages for the model
-
+        # input_messages = [msg.model_dump() for msg in request.messages]  # TODO Prepare messages for the model
+        input_messages = [HumanMessage(content=request.message)]
         # 3. Invoke the model
         response = await graph.ainvoke({"messages": input_messages}, config=config)
         final_message = response["messages"][-1]

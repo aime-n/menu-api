@@ -8,7 +8,7 @@ from langchain_core.messages import BaseMessage, AIMessage, HumanMessage
 
 class ChatRequest(BaseModel):
     """Request model for the chat endpoint."""
-    messages: List[HumanMessage]
+    message: str
     thread_id: str = Field(
         description="A unique identifier for the conversation thread to maintain state."
     )

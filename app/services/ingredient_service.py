@@ -13,11 +13,11 @@ def create_ingredient_service(ingredient: IngredientDetail, session: Session) ->
     session.add(new_ingredient)
     session.commit()
     session.refresh(new_ingredient)
-    return IngredientDetail(name=new_ingredient.name)
+    return IngredientDetail(name=new_ingredient.name, id=new_ingredient.id)
 
 def list_ingredients_service(session: Session) -> List[IngredientDetail]:
     ingredients = session.exec(select(Ingredient)).all()
-    return [IngredientDetail(name=i.name) for i in ingredients]
+    return [IngredientDetail(name=i.name, id=i.id) for i in ingredients]
 
 def get_ingredient_service(ingredient_id: int, session: Session) -> IngredientDetail:
     ingredient = session.get(Ingredient, ingredient_id)
