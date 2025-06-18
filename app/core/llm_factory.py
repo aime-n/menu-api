@@ -28,8 +28,3 @@ def get_llm(model_name: Optional[ModelName] = None) -> BaseChatModel:
     else:
         raise ValueError(f"Unsupported LLM provider: {settings.LLM_PROVIDER}")
     
-
-# Example usage (for demonstration, remove from production code if not needed)
-if __name__ == "__main__":
-    llm_instance = get_llm() # Example: using a model from settings
-    print(f"Instantiated LLM: {llm_instance._llm_type} with model {llm_instance.model}")
