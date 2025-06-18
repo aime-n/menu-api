@@ -11,6 +11,6 @@ class ChatOpenRouter(ChatOpenAI):
                  **kwargs):
         api_key_value = api_key or settings.OPENROUTER_API_KEY.get_secret_value()
         super().__init__(base_url=settings.BASE_URL_OPENROUTER, 
-                         api_key=str(api_key_value), 
+                         api_key=api_key_value, 
                          model=model, 
                          **kwargs)
