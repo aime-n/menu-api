@@ -12,7 +12,7 @@ def test_chat_openrouter_init(monkeypatch):
 
     monkeypatch.setattr("app.llm.client.settings", DummySettings)
 
-    client = ChatOpenRouter(model_name="test-model")
+    client = ChatOpenRouter(model="test-model")
     assert client.openai_api_key.get_secret_value() == "dummy-key"
     assert client.openai_api_base == "https://dummy-url.com"
     assert client.model_name == "test-model"
@@ -27,7 +27,7 @@ def test_chat_openrouter_init_with_override(monkeypatch):
 
     monkeypatch.setattr("app.llm.client.settings", DummySettings)
 
-    client = ChatOpenRouter(model_name="test-model", openai_api_key="override-key")
-    assert client.openai_api_key.get_secret_value() == "override-key"
+    client = ChatOpenRouter(model="test-model", api_key="override-key")
+    assert client.api_key.get_secret_value() == "override-key"
     assert client.openai_api_base == "https://dummy-url.com"
     assert client.model_name == "test-model"

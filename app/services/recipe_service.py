@@ -40,7 +40,7 @@ def create_recipe(session: Session, name: str, instructions: str, ingredients_da
 
 def get_all_recipes(session: Session) -> List[Recipe]:
     """Retrieves all recipes."""
-    return session.exec(select(Recipe)).all()
+    return list(session.exec(select(Recipe)).all())
 
 def get_recipe_by_name(session: Session, recipe_name: str) -> Optional[Recipe]:
     """Retrieves a single recipe by its name."""

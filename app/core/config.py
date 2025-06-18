@@ -9,8 +9,8 @@ class DatabaseSettings(BaseSettings):
     SUPABASE_URL: SecretStr = Field(default_factory=lambda: SecretStr(""))
     SUPABASE_KEY: SecretStr = Field(default_factory=lambda: SecretStr(""))
     SUPABASE_DB_PASSWORD: SecretStr = Field(default_factory=lambda: SecretStr(""))
-    SUPABASE_HOST: str = Field(default_factory=lambda: SecretStr(""))
-    DATABASE_URL: str = Field(default_factory=lambda: SecretStr(""))
+    SUPABASE_HOST: SecretStr = Field(default_factory=lambda: SecretStr(""))
+    DATABASE_URL: SecretStr = Field(default_factory=lambda: SecretStr(""))
 
 
 # Settings específicas para LLM

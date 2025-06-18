@@ -16,7 +16,7 @@ def get_llm(model_name: Optional[ModelName] = None) -> BaseChatModel:
     provider = settings.LLM_PROVIDER.lower()
 
     if provider == ModelProvider.OPENROUTER:
-        return ChatOpenRouter(model_name=effective_model_name.value)
+        return ChatOpenRouter(model=effective_model_name.value)
 
     elif provider == ModelProvider.OPENAI:
         # Needs credits

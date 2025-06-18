@@ -16,7 +16,7 @@ def handle_create_recipe(recipe_data: RecipeCreate, session: Session = Depends(g
     """
     try:
         ingredients_data = [
-            (ing.ingredient_name, ing.quantity, ing.unit)
+            (ing.ingredient_name, ing.quantity, ing.unit or "")
             for ing in recipe_data.ingredients
         ]
         recipe = recipe_service.create_recipe(
@@ -60,7 +60,7 @@ def handle_create_recipes_bulk(
     for idx, recipe_data in enumerate(recipes_data):
         try:
             ingredients_data = [
-                (ing.ingredient_name, ing.quantity, ing.unit)
+                (ing.ingredient_name, ing.quantity, ing.unit or "")
                 for ing in recipe_data.ingredients
             ]
             recipe = recipe_service.create_recipe(

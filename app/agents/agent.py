@@ -1,14 +1,14 @@
 from langgraph.graph import StateGraph, START
 from app.agents.utils.state import State
 from app.agents.utils.nodes import chatbot
-from langchain_core.runnables import RunnableConfig
+from langgraph.graph import CompiledStateGraph
 
 
 from app.utils.visualize_graph import visualize_graph
 
 # from functools import lru_cache
 # TODO @lru_cache()?
-def get_graph() -> StateGraph:
+def get_graph() -> CompiledStateGraph:
     """
     Returns a StateGraph instance for the agent.
     This function is used to compile the graph and visualize it.
@@ -27,17 +27,3 @@ def get_graph() -> StateGraph:
     # graph = graph.with_config(RunnableConfig(log_input=True, log_output=True))  # TODO construir com um configuravel
     return graph
 
-
-if __name__ == "__main__":
-    from uuid import uuid4
-
-    print("Graph compiled and saved as graph.png")
-    # result = graph.invoke({"messages": ["Hello, how are you?"]})
-    # result.pretty_print()
-    
-
-    inputs = {"messages": [("user", "Find me a recipe for chocolate chip cookies")]}
-    result = graph.invoke(
-        inputs,
-    )
-    result["messages"][-1].content.pretty_print()
