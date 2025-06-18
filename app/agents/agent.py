@@ -1,9 +1,8 @@
-from langgraph.graph import StateGraph, START
-from app.agents.utils.state import State
+from langgraph.graph import START, StateGraph
+
 from app.agents.utils.nodes import chatbot
+from app.agents.utils.state import State
 
-
-from app.utils.visualize_graph import visualize_graph
 
 # from functools import lru_cache
 # TODO @lru_cache()?

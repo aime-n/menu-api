@@ -1,16 +1,15 @@
-from fastapi import APIRouter, HTTPException, Depends
-from sqlmodel import Session, select
 from typing import List
 
-from app.schemas.recipe import IngredientDetail
+from fastapi import APIRouter, Depends
+from sqlmodel import Session
+
 from app.db.session import get_session  # Certifique-se de ter essa função
-from app.services.ingredient_service import (
-    create_ingredient_service,
-    get_ingredient_service,
-    list_ingredients_service,
-    update_ingredient_service,
-    delete_ingredient_service,
-)
+from app.schemas.recipe import IngredientDetail
+from app.services.ingredient_service import (create_ingredient_service,
+                                             delete_ingredient_service,
+                                             get_ingredient_service,
+                                             list_ingredients_service,
+                                             update_ingredient_service)
 
 router = APIRouter()
 

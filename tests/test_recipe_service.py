@@ -1,7 +1,7 @@
 import pytest
 from sqlmodel import Session, SQLModel, create_engine
 
-from app.db.models import Ingredient, Recipe, RecipeIngredientLink
+from app.db.models import RecipeIngredientLink
 from app.services import recipe_service
 
 

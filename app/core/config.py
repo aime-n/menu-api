@@ -1,7 +1,9 @@
+from functools import lru_cache
+
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from functools import lru_cache
-from app.schemas.llm import ModelProvider, ModelName
+
+from app.schemas.llm import ModelName, ModelProvider
 
 
 # Settings específicas para o banco de dados

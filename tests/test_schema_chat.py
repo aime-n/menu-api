@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from langchain_core.messages import AIMessage, HumanMessage
+from langchain_core.messages import AIMessage
 
 from app.schemas.chat import ChatRequest, ChatResponse
 

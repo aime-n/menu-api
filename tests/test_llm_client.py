@@ -1,4 +1,3 @@
-import pytest
 
 from app.llm.client import ChatOpenRouter
 

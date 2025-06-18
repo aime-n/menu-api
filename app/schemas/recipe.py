@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from sqlmodel import SQLModel, Field
+from sqlmodel import SQLModel
 
 
 class IngredientRecipe(SQLModel):

@@ -1,4 +1,4 @@
-from sqlmodel import Session, SQLModel
+from sqlmodel import Session
 
 from app.db.session import engine, get_session
 

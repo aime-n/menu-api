@@ -1,9 +1,5 @@
-from app.schemas.recipe import (
-    IngredientDetail,
-    IngredientRecipe,
-    RecipeCreate,
-    RecipePublic,
-)
+from app.schemas.recipe import (IngredientDetail, IngredientRecipe,
+                                RecipeCreate, RecipePublic)
 
 
 def test_ingredient_recipe_model():

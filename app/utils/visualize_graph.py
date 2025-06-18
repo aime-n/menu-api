@@ -1,5 +1,7 @@
-from PIL import Image
 import io
+
+from PIL import Image
+
 
 def visualize_graph(graph, save=True, filename="graph.png"):
     """

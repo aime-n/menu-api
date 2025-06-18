@@ -1,8 +1,10 @@
+from typing import List
+
 from fastapi import HTTPException
 from sqlmodel import Session, select
-from app.schemas.recipe import IngredientDetail
+
 from app.db.models import Ingredient
-from typing import List
+from app.schemas.recipe import IngredientDetail
 
 
 def create_ingredient_service(ingredient: IngredientDetail, session: Session) -> IngredientDetail:

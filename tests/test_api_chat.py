@@ -1,7 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from app.core.logger import logger
 from app.main import app
 
 

@@ -1,10 +1,11 @@
-from langchain_openai import ChatOpenAI
-from app.llm.client import ChatOpenRouter
-from app.core.config import settings
-from langchain_core.language_models.chat_models import BaseChatModel
-from app.schemas.llm import ModelName, ModelProvider
 from typing import Optional
 
+from langchain_core.language_models.chat_models import BaseChatModel
+from langchain_openai import ChatOpenAI
+
+from app.core.config import settings
+from app.llm.client import ChatOpenRouter
+from app.schemas.llm import ModelName, ModelProvider
 
 # TODO logger
 

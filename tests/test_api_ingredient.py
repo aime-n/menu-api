@@ -5,7 +5,6 @@ from sqlmodel import Session, SQLModel, create_engine
 
 from app.db.session import get_session
 from app.main import app
-from app.schemas.recipe import IngredientDetail
 
 # 1. Crie engine global de teste
 test_engine = create_engine(

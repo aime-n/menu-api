@@ -12,9 +12,6 @@ def setup_logger():
     )
     return logger
 
-# Initialize the logger
-logger = setup_logger()
-
 # Example usage:
 # from api.utils.logger import logger
 # logger.info("Logger is set up and ready to use.")
