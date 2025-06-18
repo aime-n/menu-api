@@ -6,7 +6,7 @@ from app.core.config import settings
 
 app = FastAPI(title=settings.PROJECT_NAME, 
               version=settings.PROJECT_VERSION)
-
+ 
 app.include_router(chat_router, prefix="/chat", tags=["chat"])
 app.include_router(recipe_router, prefix="/recipes", tags=["recipes"])
 app.include_router(ingredient_router, prefix="/ingredients", tags=["ingredients"])
