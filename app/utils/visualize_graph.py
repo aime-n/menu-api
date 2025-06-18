@@ -6,10 +6,10 @@ from PIL import Image
 def visualize_graph(graph, save=True, filename="graph.png"):
     """
     Visualizes the given graph by generating a PNG image of its Mermaid representation.
-    
+
     Args:
         graph: The graph object to visualize.
-        
+
     Returns:
         None
     """

@@ -15,6 +15,7 @@ metadata = SQLModel.metadata
 # Create the SQLAlchemy engine using the DATABASE_URL from settings
 engine = create_engine(str(settings.DATABASE_URL), echo=False)
 
+
 def get_session():
     """Dependency to get a database session for each request."""
     with Session(engine) as session:

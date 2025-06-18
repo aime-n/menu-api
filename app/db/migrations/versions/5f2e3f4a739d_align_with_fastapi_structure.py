@@ -5,11 +5,12 @@ Revises: 85544f481e8c
 Create Date: 2025-06-15 18:02:47.065213
 
 """
+
 from typing import Sequence, Union
 
 # revision identifiers, used by Alembic.
-revision: str = '5f2e3f4a739d'
-down_revision: Union[str, None] = '85544f481e8c'
+revision: str = "5f2e3f4a739d"
+down_revision: Union[str, None] = "85544f481e8c"
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 

@@ -9,6 +9,7 @@ from app.schemas.llm import ModelName, ModelProvider
 
 # TODO logger
 
+
 def get_llm(model_name: Optional[ModelName] = None) -> BaseChatModel:
     """
     Factory function to get an LLM instance based on configured provider.
@@ -23,9 +24,9 @@ def get_llm(model_name: Optional[ModelName] = None) -> BaseChatModel:
         # Needs credits
         return ChatOpenAI(
             model=effective_model_name.value,
-            api_key=settings.OPENAI_API_KEY.get_secret_value())
-    
+            api_key=settings.OPENAI_API_KEY.get_secret_value(),
+        )
+
     # add bedrock, gemini, azure, etc. here in the future
     else:
         raise ValueError(f"Unsupported LLM provider: {settings.LLM_PROVIDER}")
-    

@@ -16,7 +16,13 @@ def get_or_create_ingredient(session: Session, name: str) -> Ingredient:
         session.refresh(ingredient)
     return ingredient
 
-def create_recipe(session: Session, name: str, instructions: str, ingredients_data: List[Tuple[str, str, str]]) -> Recipe:
+
+def create_recipe(
+    session: Session,
+    name: str,
+    instructions: str,
+    ingredients_data: List[Tuple[str, str, str]],
+) -> Recipe:
     """Creates a new recipe and its ingredients."""
     try:
         recipe = Recipe(name=name, instructions=instructions)
@@ -27,12 +33,13 @@ def create_recipe(session: Session, name: str, instructions: str, ingredients_da
         for ingredient_name, quantity, unit in ingredients_data:
             ingredient = get_or_create_ingredient(session, ingredient_name)
             link = RecipeIngredientLink(
-                quantity=quantity, 
-                unit=unit, 
-                recipe_id=recipe.id, 
-                ingredient_id=ingredient.id)
+                quantity=quantity,
+                unit=unit,
+                recipe_id=recipe.id,
+                ingredient_id=ingredient.id,
+            )
             session.add(link)
-        
+
         session.commit()
         session.refresh(recipe)
         return recipe
@@ -40,14 +47,17 @@ def create_recipe(session: Session, name: str, instructions: str, ingredients_da
         session.rollback()
         raise e
 
+
 def get_all_recipes(session: Session) -> List[Recipe]:
     """Retrieves all recipes."""
     return list(session.exec(select(Recipe)).all())
+
 
 def get_recipe_by_name(session: Session, recipe_name: str) -> Optional[Recipe]:
     """Retrieves a single recipe by its name."""
     statement = select(Recipe).where(Recipe.name == recipe_name)
     return session.exec(statement).first()
+
 
 def delete_recipe_by_id(session: Session, recipe_id: int) -> bool:
     """

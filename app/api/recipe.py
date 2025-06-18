@@ -9,8 +9,11 @@ from app.services import recipe_service
 
 router = APIRouter()
 
+
 @router.post("/", response_model=RecipePublic)
-def handle_create_recipe(recipe_data: RecipeCreate, session: Session = Depends(get_session)):
+def handle_create_recipe(
+    recipe_data: RecipeCreate, session: Session = Depends(get_session)
+):
     """
     API endpoint to create a new recipe.
     """
@@ -23,11 +26,12 @@ def handle_create_recipe(recipe_data: RecipeCreate, session: Session = Depends(g
             session=session,
             name=recipe_data.name,
             instructions=recipe_data.instructions,
-            ingredients_data=ingredients_data
+            ingredients_data=ingredients_data,
         )
         return recipe
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
 
 @router.get("/", response_model=List[RecipePublic])
 def handle_get_all_recipes(session: Session = Depends(get_session)):
@@ -36,8 +40,11 @@ def handle_get_all_recipes(session: Session = Depends(get_session)):
     """
     return recipe_service.get_all_recipes(session=session)
 
+
 @router.get("/{recipe_name}", response_model=RecipePublic)
-def handle_get_recipe_by_name(recipe_name: str, session: Session = Depends(get_session)):
+def handle_get_recipe_by_name(
+    recipe_name: str, session: Session = Depends(get_session)
+):
     """
     API endpoint to get a single recipe by its name.
     """
@@ -67,15 +74,21 @@ def handle_create_recipes_bulk(
                 session=session,
                 name=recipe_data.name,
                 instructions=recipe_data.instructions,
-                ingredients_data=ingredients_data
+                ingredients_data=ingredients_data,
             )
             created_recipes.append(recipe)
         except Exception as e:
-            errors.append({"index": idx, "name": getattr(recipe_data, "name", None), "error": str(e)})
+            errors.append(
+                {
+                    "index": idx,
+                    "name": getattr(recipe_data, "name", None),
+                    "error": str(e),
+                }
+            )
     if errors:
         raise HTTPException(
             status_code=400,
-            detail={"created": [r.name for r in created_recipes], "errors": errors}
+            detail={"created": [r.name for r in created_recipes], "errors": errors},
         )
     return created_recipes
 
@@ -86,7 +99,9 @@ def handle_delete_recipe_by_id(recipe_id: int, session: Session = Depends(get_se
     API endpoint to delete a recipe by its ID.
     """
     try:
-        deleted = recipe_service.delete_recipe_by_id(session=session, recipe_id=recipe_id)
+        deleted = recipe_service.delete_recipe_by_id(
+            session=session, recipe_id=recipe_id
+        )
         if not deleted:
             raise HTTPException(status_code=404, detail="Recipe not found")
         return {"ok": True, "message": f"Recipe with id '{recipe_id}' deleted."}

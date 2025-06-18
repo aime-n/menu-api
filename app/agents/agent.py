@@ -24,4 +24,3 @@ def get_graph():
     # visualize_graph(graph, save=True, filename="graph.png")
     # graph = graph.with_config(RunnableConfig(log_input=True, log_output=True))  # TODO construir com um configuravel
     return graph
-

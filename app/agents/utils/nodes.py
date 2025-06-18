@@ -4,5 +4,6 @@ from app.core.llm_factory import get_llm
 
 llm = get_llm(settings.DEFAULT_MODEL)
 
+
 def chatbot(state: State):
     return {"messages": [llm.invoke(state["messages"])]}

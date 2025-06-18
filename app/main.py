@@ -5,12 +5,12 @@ from app.api.ingredient import router as ingredient_router
 from app.api.recipe import router as recipe_router
 from app.core.config import settings
 
-app = FastAPI(title=settings.PROJECT_NAME, 
-              version=settings.PROJECT_VERSION)
- 
+app = FastAPI(title=settings.PROJECT_NAME, version=settings.PROJECT_VERSION)
+
 app.include_router(chat_router, prefix="/chat", tags=["chat"])
 app.include_router(recipe_router, prefix="/recipes", tags=["recipes"])
 app.include_router(ingredient_router, prefix="/ingredients", tags=["ingredients"])
+
 
 @app.get("/")
 def read_root():
@@ -19,6 +19,7 @@ def read_root():
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info", reload=True)
 # Run with: uvicorn api.main:app --reload
 # poetry run uvicorn api.main:app --reload

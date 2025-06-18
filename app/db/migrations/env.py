@@ -13,7 +13,7 @@ from app.db.session import metadata
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL) 
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 
 # Interpret the config file for Python logging.
 if config.config_file_name is not None:
@@ -25,21 +25,24 @@ if config.config_file_name is not None:
 # target_metadata = Base.metadata
 target_metadata = metadata  # Substitua por sua metadata, se necessário
 
+
 def get_url():
     return settings.DATABASE_URL
+
 
 def run_migrations_offline():
     url = get_url()
     context.configure(
-        url=url, 
-        target_metadata=target_metadata, 
-        literal_binds=True, 
+        url=url,
+        target_metadata=target_metadata,
+        literal_binds=True,
         compare_type=True,
         # dialect_opts={"paramstyle": "named"}
     )
 
     with context.begin_transaction():
         context.run_migrations()
+
 
 def run_migrations_online():
     connectable = engine_from_config(
@@ -55,6 +58,7 @@ def run_migrations_online():
 
         with context.begin_transaction():
             context.run_migrations()
+
 
 if context.is_offline_mode():
     run_migrations_offline()

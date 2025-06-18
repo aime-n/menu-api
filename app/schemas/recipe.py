@@ -8,14 +8,17 @@ class IngredientRecipe(SQLModel):
     quantity: str
     unit: Optional[str] = None
 
+
 class RecipeCreate(SQLModel):
     name: str
     instructions: str
-    ingredients: List[IngredientRecipe] # (ingredient_name, quantity, unit)
+    ingredients: List[IngredientRecipe]  # (ingredient_name, quantity, unit)
+
 
 class IngredientDetail(SQLModel):
     name: str
     id: Optional[int] = None
+
 
 class RecipePublic(SQLModel):
     id: int
