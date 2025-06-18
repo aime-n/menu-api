@@ -13,7 +13,7 @@ metadata = SQLModel.metadata
 # supabase: Client = create_client(url, key)
 
 # Create the SQLAlchemy engine using the DATABASE_URL from settings
-engine = create_engine(settings.DATABASE_URL, echo=False)
+engine = create_engine(settings.DATABASE_URL.get_secret_value(), echo=False)
 
 
 def get_session():
