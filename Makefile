@@ -20,3 +20,6 @@ format:
 
 update:
 	bash	scripts/update.sh
+
+clean:
+	bash	scripts/clean.sh
