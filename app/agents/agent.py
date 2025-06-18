@@ -1,14 +1,13 @@
 from langgraph.graph import StateGraph, START
 from app.agents.utils.state import State
 from app.agents.utils.nodes import chatbot
-from langgraph.graph import CompiledStateGraph
 
 
 from app.utils.visualize_graph import visualize_graph
 
 # from functools import lru_cache
 # TODO @lru_cache()?
-def get_graph() -> CompiledStateGraph:
+def get_graph():
     """
     Returns a StateGraph instance for the agent.
     This function is used to compile the graph and visualize it.

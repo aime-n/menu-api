@@ -21,8 +21,8 @@ def get_llm(model_name: Optional[ModelName] = None) -> BaseChatModel:
     elif provider == ModelProvider.OPENAI:
         # Needs credits
         return ChatOpenAI(
-            model_name=effective_model_name.value,
-            openai_api_key=settings.OPENAI_API_KEY.get_secret_value())
+            model=effective_model_name.value,
+            api_key=settings.OPENAI_API_KEY.get_secret_value())
     
     # add bedrock, gemini, azure, etc. here in the future
     else:
@@ -32,4 +32,4 @@ def get_llm(model_name: Optional[ModelName] = None) -> BaseChatModel:
 # Example usage (for demonstration, remove from production code if not needed)
 if __name__ == "__main__":
     llm_instance = get_llm() # Example: using a model from settings
-    print(f"Instantiated LLM: {llm_instance._llm_type} with model {llm_instance.model_name}")
+    print(f"Instantiated LLM: {llm_instance._llm_type} with model {llm_instance.model}")

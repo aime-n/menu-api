@@ -40,7 +40,7 @@ async def stream_generator(request_body: ChatRequest):
     """
     graph = get_graph()
     config = {"configurable": {"thread_id": request_body.thread_id}}
-    input_messages = [msg.model_dump() for msg in request_body.message]
+    input_messages = [request_body.message]
     
     # Use astream to get an async iterator of the final response chunks.
     # The 'messages' mode streams only the message content.
