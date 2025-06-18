@@ -10,9 +10,7 @@ test:
 	poetry	run	pytest
 
 lint:
-	poetry	run	isort	app/
-	poetry	run	black	app/
-	poetry	run	flake8	app/
+	bash	scripts/lint.sh
 
 format:
 	poetry	run	isort	app/
