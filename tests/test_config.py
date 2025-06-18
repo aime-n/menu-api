@@ -1,8 +1,10 @@
-from app.core.config import get_settings, Settings
+from app.core.config import Settings, get_settings
+
 
 def test_get_settings_returns_settings_instance():
     settings = get_settings()
     assert isinstance(settings, Settings)
+
 
 def test_settings_fields_exist():
     settings = get_settings()

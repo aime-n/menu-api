@@ -1,12 +1,16 @@
 from datetime import datetime
-from langchain_core.messages import HumanMessage, AIMessage
+
+from langchain_core.messages import AIMessage, HumanMessage
+
 from app.schemas.chat import ChatRequest, ChatResponse
+
 
 def test_chat_request_model():
     req = ChatRequest(message="Hello!", thread_id="thread-123")
     assert req.thread_id == "thread-123"
     assert isinstance(req.message[0], str)
     assert req.message == "Hello!"
+
 
 def test_chat_response_model():
     ai_msg = AIMessage(content="Hi there!")

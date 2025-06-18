@@ -9,8 +9,8 @@ poetry run isort tests/
 poetry run black tests/
 
 # Cria diretório de migrações Alembic se não existir
-if [ ! -d "app/db/migration/versions" ]; then
-  poetry run alembic -c alembic.ini init app/db/migration
+if [ ! -d "app/db/migrations/versions" ]; then
+  poetry run alembic -c alembic.ini init app/db/migrations
 fi
 
 # Aplica as migrações pendentes antes de gerar nova revisão
