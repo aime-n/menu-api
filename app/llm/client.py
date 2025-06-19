@@ -7,6 +7,8 @@ from app.core.config import settings
 
 
 class ChatOpenRouter(ChatOpenAI):
+    model: str
+
     def __init__(
         self,
         model: str,  # Add model as a parameter if it's dynamic
@@ -21,5 +23,3 @@ class ChatOpenRouter(ChatOpenAI):
             **kwargs
         )
         self.model = model
-        self.openai_api_base = settings.BASE_URL_OPENROUTER
-        self.api_key = api_key
