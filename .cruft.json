@@ -1,17 +1,39 @@
 {
-  "template": "https://github.com/timothycrosley/cookiecutter-python/",
-  "commit": "71391fd9999067ef4b38aa05e7116087fac431f8",
+  "template": "https://github.com/tiangolo/full-stack-fastapi-postgresql",
+  "commit": "c5d7e9c",
   "checkout": null,
   "context": {
     "cookiecutter": {
       "full_name": "Aimê Nobrega",
       "email": "aime.nobrega@gmail.com",
       "github_username": "aime-n",
-      "project_name": "menu-mvp-api",
-      "description": "Project short description.",
-      "version": "0.0.1",
-      "_template": "https://github.com/timothycrosley/cookiecutter-python/",
-      "_commit": "71391fd9999067ef4b38aa05e7116087fac431f8"
+      "project_name": "menu-api",
+      "project_slug": "menu-api",
+      "domain_main": "menu-api.com",
+      "docker_swarm_stack_name": "menu-api",
+      "secret_key": "{{ cookiecutter.secret_key }}",
+      "first_superuser": "admin",
+      "first_superuser_password": "{{ cookiecutter.first_superuser_password }}",
+      "backend_cors_origins": [
+        "http://localhost",
+        "http://localhost:4200",
+        "http://localhost:3000",
+        "http://localhost:8080",
+        "https://localhost",
+        "https://localhost:4200",
+        "https://localhost:3000",
+        "https://localhost:8080"
+      ],
+      "postgres_password": "{{ cookiecutter.postgres_password }}",
+      "traefik_public_network": "traefik-public",
+      "flower_auth": "{{ cookiecutter.flower_auth }}",
+      "sentry_dsn": "{{ cookiecutter.sentry_dsn }}",
+      "docker_image_prefix": "menu-api",
+      "docker_image_backend": "menu-api-backend",
+      "docker_image_celeryworker": "menu-api-celeryworker",
+      "docker_image_frontend": "menu-api-frontend",
+      "_template": "https://github.com/tiangolo/full-stack-fastapi-postgresql",
+      "_commit": "c5d7e9c"
     }
   },
   "directory": null

@@ -1,45 +1,51 @@
-[tool.poetry]
-name = "menu-mvp-api"
+[project]
+name = "menu-api"
 version = "0.1.0"
-description = ""
-authors = ["aime-n <aime.nobrega@gmail.com>"]
+description = "A FastAPI-based menu management API with AI-powered recipe generation"
+authors = [
+    {name = "aime-n", email = "aime.nobrega@gmail.com"}
+]
 readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "fastapi>=0.115.0",
+    "streamlit>=1.45.0",
+    "langgraph>=0.4.8",
+    "langchain-openai>=0.3.23",
+    "httpx>=0.28.1",
+    "sqlmodel>=0.0.24",
+    "alembic>=1.16.1",
+    "python-dotenv>=1.1.0",
+    "uvicorn>=0.34.3",
+    "langchain>=0.3.25",
+    "sqlalchemy>=2.0.41",
+    "langchain-core>=0.3.65",
+    "sse-starlette>=2.3.6",
+    "langfuse>=3.0.2",
+    "psycopg2-binary>=2.9.10",
+    "pydantic>=2.11.7",
+    "pydantic-settings>=2.9.1",
+    "supabase>=2.15.3",
+    "loguru>=0.7.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=25.1.0",
+    "isort>=6.0.1",
+    "pytest>=8.4.0",
+    "mypy>=1.16.1",
+    "coverage>=7.9.1",
+    "bandit>=1.8.5",
+    "flake8>=7.2.0",
+    "cruft>=2.16.0",
+    "pytest-dotenv>=0.5.2",
+]
+
+[tool.poetry]
 packages = [
     { include = "app" },
 ]
-
-[tool.poetry.dependencies]
-python = ">=3.10,<4.0"
-fastapi = "^0.115.0"
-streamlit = "^1.45.0"
-langgraph = "^0.4.8"
-langchain-openai = "^0.3.23"
-httpx = "^0.28.1"
-sqlmodel = "^0.0.24"
-alembic = "^1.16.1"
-python-dotenv = "^1.1.0"
-uvicorn = "^0.34.3"
-langchain = "0.3.25"
-sqlalchemy = "^2.0.41"
-langchain-core = "^0.3.65"
-sse-starlette = "^2.3.6"
-langfuse = "^3.0.2"
-psycopg2-binary = "^2.9.10"
-pydantic = "^2.11.7"
-pydantic-settings = "^2.9.1"
-supabase = "^2.15.3"
-loguru = "^0.7.3"
-
-[tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
-isort = "^6.0.1"
-pytest = "^8.4.0"
-mypy = "^1.16.1"
-coverage = "^7.9.1"
-bandit = "^1.8.5"
-flake8 = "^7.2.0"
-cruft = "^2.16.0"
-pytest-dotenv = "^0.5.2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
