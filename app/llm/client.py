@@ -20,3 +20,6 @@ class ChatOpenRouter(ChatOpenAI):
             model=model,
             **kwargs
         )
+        self.model = model
+        self.openai_api_base = settings.BASE_URL_OPENROUTER
+        self.api_key = api_key
