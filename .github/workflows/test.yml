@@ -5,6 +5,8 @@ on: [push, pull_request]
 env:
   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
   DATABASE_URL: ${{ secrets.DATABASE_URL }}
+  OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
 
 jobs:
   build:
