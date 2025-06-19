@@ -62,7 +62,7 @@ jobs:
       - name: Test
         shell: bash
         run: |
-          poetry run pytest tests/ -s
+          poetry run coverage run -m pytest tests/ -s
           poetry run coverage xml
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
