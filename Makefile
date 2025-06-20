@@ -1,10 +1,7 @@
-.PHONY:	run	dev	test	lint	format	update
+.PHONY:	run	dev	test	lint	format	clean	pre-commit	update
 
 run:
 	poetry	run	uvicorn	app.main:app	--reload
-
-dev:
-	poetry	shell
 
 test:
 	poetry	run	pytest
@@ -13,11 +10,16 @@ lint:
 	bash	scripts/lint.sh
 
 format:
-	poetry	run	isort	app/
-	poetry	run	black	app/
-
-update:
-	bash	scripts/update.sh
+	bash	scripts/format.sh
 
 clean:
 	bash	scripts/clean.sh
+
+pre-commit:
+	bash	scripts/pre-commit.sh
+
+update_db:
+	bash	scripts/update_db.sh
+
+done:
+	bash	scripts/done.sh

@@ -1,16 +1,16 @@
 """update
 
-Revision ID: a6fa6364b745
-Revises: 968733bb4fd0
-Create Date: 2025-06-17 21:28:50.163914
+Revision ID: 35ed5f4d13c8
+Revises: a7936e341059
+Create Date: 2025-06-19 23:13:52.005677
 
 """
 
 from typing import Sequence, Union
 
 # revision identifiers, used by Alembic.
-revision: str = "a6fa6364b745"
-down_revision: Union[str, Sequence[str], None] = "968733bb4fd0"
+revision: str = "35ed5f4d13c8"
+down_revision: Union[str, Sequence[str], None] = "a7936e341059"
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 

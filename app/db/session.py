@@ -2,7 +2,7 @@ from sqlmodel import Session, SQLModel, create_engine
 
 from app.core.config import settings
 
-# Import your schemas so that SQLModel knows about them
+# Import your models so that SQLModel knows about them
 
 # The SQLModel.metadata object contains all the table definitions.
 # We will import this into Alembic's environment script.

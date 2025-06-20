@@ -1,9 +1,14 @@
+import os
 from functools import lru_cache
 
+from dotenv import load_dotenv
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.schemas.llm import ModelName, ModelProvider
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 # Settings específicas para o banco de dados
@@ -12,7 +17,13 @@ class DatabaseSettings(BaseSettings):
     SUPABASE_KEY: SecretStr = Field(default_factory=lambda: SecretStr(""))
     SUPABASE_DB_PASSWORD: SecretStr = Field(default_factory=lambda: SecretStr(""))
     SUPABASE_HOST: SecretStr = Field(default_factory=lambda: SecretStr(""))
-    DATABASE_URL: SecretStr = Field(default_factory=lambda: SecretStr(""))
+    DATABASE_URL: SecretStr = Field(
+        default_factory=lambda: SecretStr(
+            "postgresql://postgres:postgres@localhost:5432/postgres"
+            if not os.getenv("GITHUB_ACTIONS")
+            else os.getenv("DATABASE_URL", "")
+        )
+    )
 
 
 # Settings específicas para LLM

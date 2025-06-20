@@ -1,16 +1,16 @@
-"""Align with FastAPI structure
+"""initial
 
-Revision ID: 5f2e3f4a739d
-Revises: 85544f481e8c
-Create Date: 2025-06-15 18:02:47.065213
+Revision ID: 84319ed0bb57
+Revises:
+Create Date: 2025-06-19 23:06:16.514014
 
 """
 
 from typing import Sequence, Union
 
 # revision identifiers, used by Alembic.
-revision: str = "5f2e3f4a739d"
-down_revision: Union[str, None] = "85544f481e8c"
+revision: str = "84319ed0bb57"
+down_revision: Union[str, Sequence[str], None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 

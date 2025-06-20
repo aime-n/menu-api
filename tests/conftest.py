@@ -1,5 +1,5 @@
 import os
-import pytest
+
 from dotenv import load_dotenv
 
 # Configura variáveis de ambiente para testes

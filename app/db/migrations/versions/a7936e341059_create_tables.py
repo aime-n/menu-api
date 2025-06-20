@@ -1,8 +1,8 @@
-"""Align with FastAPI structure
+"""create tables
 
-Revision ID: 85544f481e8c
-Revises:
-Create Date: 2025-06-15 18:00:16.692519
+Revision ID: a7936e341059
+Revises: c3f51f87a6d9
+Create Date: 2025-06-19 23:08:58.317036
 
 """
 
@@ -13,8 +13,8 @@ import sqlmodel
 from alembic import op
 
 # revision identifiers, used by Alembic.
-revision: str = "85544f481e8c"
-down_revision: Union[str, None] = None
+revision: str = "a7936e341059"
+down_revision: Union[str, Sequence[str], None] = "c3f51f87a6d9"
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
 
